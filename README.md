@@ -1,6 +1,6 @@
 # Color Coordinate
 
-![AppImage](https://raw.githubusercontent.com/currychern/color-coordinate/master/assets/app.jpg)
+![AppImage](https://raw.githubusercontent.com/currychern/color-coordinate/master/assets/app.png)
 
 > Hex/RGB color converter. Color picker and coordinate finder functionality in development.
 
@@ -22,8 +22,7 @@
 
 ## Features
 
-1. `Hex/RGB Conversion` - Convert from hex color to rgb color and vice    
-    versa
+1. `Hex/RGB Conversion` - Convert from hex color to rgb color and vice versa
 
 2. `Color Picker` - Shows the Hex/RGB color where the mouse is positioned.
     Feature in development.
