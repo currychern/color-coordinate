@@ -1,6 +1,6 @@
 # Color Coordinate
 
-![AppImage](https://raw.githubusercontent.com/currychern/color-coordinate/master/assets/app.png)
+![AppImage](https://raw.githubusercontent.com/currychern/color-coordinate/master/public/assets/app.png)
 
 > Hex/RGB color converter. Color picker and coordinate finder functionality in development.
 
