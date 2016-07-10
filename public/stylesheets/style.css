@@ -1,0 +1,183 @@
+@import url("http://fonts.googleapis.com/css?family=Montserrat");
+@import url("http://fonts.googleapis.com/css?family=Muli:300");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+/* MIXINS - (https://github.com/Lukavyi/stylus-input-placeholder-mixin)
+----------------------------------------------------------------------------- */
+/* VARIABLES
+------------------------------------------------------------------------------*/
+body {
+  font-family: 'Montserrat';
+  font-size: 24px;
+  background-color: #640064;
+}
+.body-dark {
+  color: #000;
+}
+.body-light {
+  color: #fff;
+}
+h1 {
+  padding: 20px;
+}
+.content {
+  height: 450px;
+  position: relative;
+}
+form {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -o-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+input {
+  font-family: 'Muli', sans-serif;
+  font-size: 36px;
+  padding: 40px 20px 10px 10px;
+  border: none;
+  border-bottom: 1px dotted rgba(0,0,0,0.3);
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background: 0 0;
+}
+input:focus {
+  outline: 0;
+}
+.input-dark {
+  color: #000;
+  border-bottom-color: rgba(0,0,0,0.3);
+}
+.input-dark:focus {
+  border-bottom-color: #000;
+}
+.input-dark::-webkit-input-placeholder {
+  color: #333;
+}
+.input-dark:-moz-placeholder {
+  color: #333;
+}
+.input-dark::-moz-placeholder {
+  color: #333;
+}
+.input-dark:-ms-input-placeholder {
+  color: #333;
+}
+.input-light {
+  color: #fff;
+  border-bottom-color: rgba(255,255,255,0.3);
+}
+.input-light:focus {
+  border-bottom-color: #fff;
+}
+.input-light::-webkit-input-placeholder {
+  color: #ccc;
+}
+.input-light:-moz-placeholder {
+  color: #ccc;
+}
+.input-light::-moz-placeholder {
+  color: #ccc;
+}
+.input-light:-ms-input-placeholder {
+  color: #ccc;
+}
+footer {
+  font-size: 36px;
+  margin: 50px auto;
+  padding-top: 5px;
+  text-align: center;
+}

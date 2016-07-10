@@ -1,0 +1,81 @@
+@import 'nib'
+@import url('http://fonts.googleapis.com/css?family=Montserrat')
+@import url('http://fonts.googleapis.com/css?family=Muli:300')
+
+global-reset()
+
+/* MIXINS - (https://github.com/Lukavyi/stylus-input-placeholder-mixin)
+----------------------------------------------------------------------------- */
+placeholder()
+  &::-webkit-input-placeholder
+    {block}
+  &:-moz-placeholder
+    {block}
+  &::-moz-placeholder
+    {block}
+  &:-ms-input-placeholder
+    {block}
+
+/* VARIABLES
+------------------------------------------------------------------------------*/
+default-color = #640064
+light-color = #FFFFFF
+light-color-2 = #CCCCCC
+dark-color = #000000
+dark-color-2 = #333333
+
+body
+  font-family 'Montserrat'
+  font-size 24px
+  background-color default-color
+
+.body-dark
+  color dark-color
+
+.body-light
+  color light-color
+
+h1
+  padding 20px
+
+.content
+  height 450px
+  position relative
+
+form
+  display inline-block
+  absolute left 50% top 50%
+  transform translate3d(-50%, -50%, 0)
+
+input
+  font-family 'Muli', sans-serif
+  font-size 36px
+  padding 40px 20px 10px 10px
+  border none
+  border-bottom 1px dotted rgba(0,0,0,0.3)
+  border-radius 0
+  background 0 0
+  &:focus
+    outline 0
+
+.input-dark
+  color dark-color
+  border-bottom-color rgba(0,0,0,0.3)
+  &:focus
+    border-bottom-color dark-color
+  +placeholder()
+    color dark-color-2
+
+.input-light
+  color light-color
+  border-bottom-color rgba(255,255,255,0.3)
+  &:focus
+    border-bottom-color light-color
+  +placeholder()
+    color light-color-2
+
+footer
+  font-size 36px
+  margin 50px auto
+  padding-top 5px
+  text-align center
