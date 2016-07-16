@@ -1,6 +1,6 @@
 {
   "name": "color-coordinate",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "utility to pick and convert color (hex/rgb)",
   "main": "app.js",
   "scripts": {
@@ -14,6 +14,8 @@
     "jade": "^1.11.0",
     "nib": "^1.1.0",
     "robotjs": "^0.4.4",
+    "serve-favicon": "^2.3.0",
+    "socket.io": "^1.4.8",
     "stylus": "^0.54.5"
   }
 }

@@ -6,12 +6,90 @@ var light_color_2 = '#CCCCCC'
 var dark_color = '#000000'
 var dark_color_2 = '#333333'
 
-/* DOM Ready
+var socket = io()
+
+/* DOM Events
 ------------------------------------------------------------------------------*/
 $(document).ready(function() {
   luminance()
   inputHandlers()
 })
+
+$(document).keyup(function(e) {
+  // 'p' key pressed
+  if (e.keyCode == 80) {
+
+    $('.pos').toggleClass('pause')
+
+    var paused = $('.pos').hasClass('pause')
+    var inside = $('body').hasClass('inside')
+
+    if (paused) {
+      $('.state').text('paused.')
+      emitColorPos('stop')
+    }
+    else if (!inside) {
+      $('.state').text('scanning...')
+      emitColorPos('start')
+    }
+    else {
+      $('.state').text('')
+    }
+  }
+})
+
+$(document).mouseleave(function() {
+  $('body').toggleClass('inside')
+
+  var paused = $('.pos').hasClass('pause')
+  if (!paused) {
+    $('.state').text('scanning...')
+    emitColorPos('start')
+  }
+
+  socket.on('robotInfo', function(x, y, color) {
+    outputRobotInfo(x, y, color)
+  })
+
+})
+
+$(document).mouseenter(function() {
+  $('body').toggleClass('inside')
+
+  var paused = $('.pos').hasClass('pause')
+  if (!paused) {
+    $('.state').text('')
+    emitColorPos('stop')
+  }
+})
+
+/* IO Events
+------------------------------------------------------------------------------*/
+function emitColorPos(type) {
+  switch(type) {
+    case 'start':
+      socket.emit('startColorPos')
+      break
+    case 'stop':
+      socket.emit('stopColorPos')
+      break
+  }
+}
+
+function outputRobotInfo(x, y, robotColor) {
+  // Set hex value
+  var hex = '#' + robotColor.toUpperCase()
+  $('#hex').val(hex)
+
+  // Set rgb value and background color
+  var color = hexToRgb(hex)
+  $('#rgb').val(color.m)
+  $('body').css('background-color', color.m)
+
+  $('.pos').text(x + ', ' + y)
+  // Set text color based on background color
+  luminance()
+}
 
 /* Event Handlers
 ------------------------------------------------------------------------------*/
@@ -33,6 +111,8 @@ function inputHandlers() {
 
     luminance()
 
+    $('.pos').text('')
+
   })
 
   rgb.on('input', () => {
@@ -49,6 +129,7 @@ function inputHandlers() {
 
     luminance()
 
+    $('.pos').text('')
   })
 }
 
@@ -112,7 +193,7 @@ function luminance() {
 
   var luma = 0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b // per ITU-R BT.709
 
-  if (luma < 80) {
+  if (luma < 100) {
     $('body').removeClass('body-dark')
     $('input').removeClass('input-dark')
 
