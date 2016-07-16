@@ -1,6 +1,6 @@
 {
   "name": "color-coordinate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "utility to pick and convert color (hex/rgb)",
   "main": "app.js",
   "scripts": {
